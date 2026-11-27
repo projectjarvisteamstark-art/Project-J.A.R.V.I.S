@@ -51,7 +51,7 @@ export function ChatPanel({
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, essages, loading]);
+  }, [messages, loading]);
 
   const listening = voiceStatus === "listening";
 
@@ -88,7 +88,7 @@ export function ChatPanel({
               &gt; J.A.R.V.I.S. STANDING BY
             </div>
             <p className="max-w-xs font-mono text-xs text-cyan-100/40">
-              Good evening, sir. All systems are operational.{" "}
+              Good evening, sir. All systems are operational. {" "}
               {mode === "voice"
                 ? 'Say "JARVIS" followed by your command.'
                 : "How may I assist you today?"}

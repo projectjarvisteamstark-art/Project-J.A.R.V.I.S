@@ -17,7 +17,7 @@ function randomize(m: Metric): Metric {
 }
 
 export function SystemPanel() {
-  const etrics, setMetrics] = useState<Metric[]>([
+  const [metrics, setMetrics] = useState<Metric[]>([
     { label: "ARC REACTOR OUTPUT", value: 3.8, unit: "GJ/s", min: 3.2, max: 4.4 },
     { label: "CPU LOAD", value: 42, unit: "%", min: 18, max: 78 },
     { label: "MEMORY USAGE", value: 61, unit: "%", min: 40, max: 82 },

@@ -84,8 +84,8 @@ async function transcribeBlob(blob: Blob): Promise<string> {
 export default function JarvisPage() {
   const { toast } = useToast();
 
-  const ode, setMode] = useState<InputMode>("voice");
-  const essages, setMessages] = useState<ChatMessage[]>([]);
+  const [mode, setMode] = useState<InputMode>("voice");
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [conversationId, setConversationId] = useState<string | null>(null);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -94,7 +94,7 @@ export default function JarvisPage() {
   const [speaking, setSpeaking] = useState(false);
   const [voiceOn, setVoiceOn] = useState(true);
   const [clock, setClock] = useState("--:--:--");
-  const icSupported, setMicSupported] = useState(false);
+  const [micSupported, setMicSupported] = useState(false);
   const [engaged, setEngaged] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -120,7 +120,7 @@ export default function JarvisPage() {
 
   useEffect(() => {
     modeRef.current = mode;
-  }, ode]);
+  }, [mode]);
 
   useEffect(() => {
     engagedRef.current = engaged;
